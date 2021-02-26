@@ -194,48 +194,11 @@ window.addEventListener('DOMContentLoaded', () => {
     getResource('http://localhost:3000/menu')
         .then(data => {
             data.forEach(({img, altimg, title, descr, price}) => {
-                new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+                new MenuCard(img, altimg, title, descr, price, '.menu .container')
+                    .render();
             });
         });
-
-    // new MenuCard(
-    //     "img/tabs/vegy.jpg",
-    //     "vegy",
-    //     'Меню "Фитнес"',
-    //     `Меню "Фитнес" - это новый подход к приготовлению 
-    //     блюд: больше свежих овощей и фруктов. Продукт активных 
-    //     и здоровых людей. Это абсолютно новый продукт с оптимальной 
-    //     ценой и высоким качеством!`,
-    //     9,
-    //     '.menu .container'
-    // ).render();
-
-    // new MenuCard(
-    //     "img/tabs/elite.jpg",
-    //     "elite",
-    //     'Меню “Премиум”',
-    //     `В меню “Премиум” мы используем не только красивый дизайн 
-    //     упаковки, но и качественное исполнение блюд. Красная рыба, 
-    //     морепродукты, фрукты - ресторанное меню без похода в ресторан!`,
-    //     14,
-    //     '.menu .container'
-    // ).render();
-
-    // new MenuCard(
-    //     "img/tabs/post.jpg",
-    //     "post",
-    //     'Меню "Постное"',
-    //     `Меню “Постное” - это тщательный подбор ингредиентов: полное 
-    //     отсутствие продуктов животного происхождения, молоко из миндаля, 
-    //     овса, кокоса или гречки, правильное количество белков за счет 
-    //     тофу и импортных вегетарианских стейков.`,
-    //     21,
-    //     '.menu .container',
-    //     'menu__item'
-    // ).render();
-
-    // Forms
-
+        
     const forms = document.querySelectorAll('form');
 
     const message = {
@@ -312,8 +275,4 @@ window.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }, 4000);
     }
-
-    fetch('http://localhost:3000/menu')
-        .then(data => data.json())
-        .then(res => console.log(res));
 });
